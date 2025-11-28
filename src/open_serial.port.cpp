@@ -19,7 +19,7 @@ INPUT:
    
 
  
-       if (!sa.isDeviceOpen() || check_port < 0)
+       if (!sa.isDeviceOpen() || cin.fail())
        { 
  
 

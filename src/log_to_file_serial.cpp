@@ -1,8 +1,8 @@
-#include "log_to_file_serial.h"
-#include "read_serial_uart.h"
-std::fstream log_file_serial::file_print;
-bool log_file_serial::log_to_file_serial()
-{
+    #include "log_to_file_serial.h"
+    std::fstream log_file_serial::file_print;
+   
+    bool log_file_serial::log_to_file_serial()
+    {
 
     // implement for read THREADS!!  try  TRY and throw catch C++
     file_print.open("log5.txt", std::ios::app | std::fstream::in  | std::fstream::out);
@@ -14,12 +14,12 @@ bool log_file_serial::log_to_file_serial()
     s.xyz_stm_32.reserve(100);
 
  
-    if (s.read_bytes <= 0)
-    {
-        std::cerr << "Error, 0 bytes from serial port, or critical error" << "\n";
-        return false;
-   }
-    if (s.read_bytes > 0)
+    //if (e.read_bytes <= 0)
+    //{
+       // std::cerr << "Error, 0 bytes from serial port, or critical error" << "\n";
+       /// return false;
+  // }
+    if (e.read_bytes > 0)
     {
 
         s.xyz_stm_32.insert(s.xyz_stm_32.end(), std::begin(s.temp), std::end(s.temp));
