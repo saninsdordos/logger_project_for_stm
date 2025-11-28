@@ -16,15 +16,11 @@ void start_point_read_write::start_point()
 int temp = 0;
   using namespace std::chrono_literals;
   using namespace std::this_thread;
-  for(int s = 0; s < 100; s++) {
-   
-   temp += r.save_from_serial_char[s];
-  }
-  if(temp > 10) {
+ 
   do
   {
 // TODO: FIX  CONTROL CENTER,  possible delay issue;, possible another way how i can sync all functions
-    using std::chrono::system_clock;
+ 
  
   
     status1 = p2.read_serial_uart();
@@ -32,6 +28,6 @@ int temp = 0;
     status2 = p3.log_to_file_serial();
 test++;
   } while (test < 100);
-  }
+  
 
 }
