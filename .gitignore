@@ -40,4 +40,6 @@
 # debug information files
 *.dwo
 *.txt
-classes.study.cpp
+algorithm_sleep.cpp 
+study_classes.cpp
+test.cpp 
