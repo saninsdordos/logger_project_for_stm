@@ -1,18 +1,41 @@
-                #include "read_thread_serial.h"
-          
+#include "read_thread_serial.h"
+#include "read_uart_only.h"
 
-                    void only_read_serial::only_read_serial_read() {
-                    std::cout << "ssssssssssssssssss" << "\n";
-                       int d = 0;
-                    while(d < 10) {
-                      //  std::cout << "Address thread" << &temp_buffer_100 << "\n";//
-              
-                        read_bytes = t.sa.readChar(save_from_serial_char, 200);
-                   
-                    std::cout << read_bytes << "byte in";
-                   
-                    
-               
-                    }  
-                        
-                    }
+bool only_read_serial::only_read_serial_read()
+{
+
+  using namespace std::chrono_literals;
+  using namespace std::this_thread;
+while(true)
+  {
+
+
+    //  std::cout << "Address thread" << &temp_buffer_100 << "\n";//
+
+
+
+      read_bytes = u.sa.readChar(save_from_serial_char, 20);
+  
+ tempd  =  save_from_serial_char[0];
+std::cout << "symbol" << tempd << "\n";
+   t.read_serial_uart(tempd);
+  // d++;
+  
+   
+ 
+     // d = 0;
+
+     //std::unique_lock<std::mutex> lock(test_mutex); 
+     // std::cout << "ok" << "\n";
+     
+    //  data_ready = true;
+// test.notify_one();
+   
+    
+ // }
+ 
+} 
+
+
+return true;
+}

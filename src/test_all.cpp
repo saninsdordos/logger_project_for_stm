@@ -1,14 +1,18 @@
 #include "start_point_read_write.h"
-open_usb_port_serial s;
-start_point_read_write e;
+
+open_usb_port_serial t;
+start_point_read_write u;
 
 int main()
 { 
     
- only_read_serial y;
+
+ 
+
     int choice_switch = 0;
     using std::cin;
     using std::cout;
+    bool start;
 
     do
     {
@@ -22,16 +26,18 @@ int main()
         case 1:
         {
        
-           s.open_usb_port();
+           t.open_usb_port();
             break;
         }
         case 2:
         {
-               
-         e.start_point();
-          
+       
+      u.start_point();
+       
             break;
         }
         }   
     } while (1);
+
 }
+

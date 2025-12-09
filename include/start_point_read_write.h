@@ -4,23 +4,24 @@
 #pragma once
 class start_point_read_write
 {
-public:
-public:
-    only_read_serial p4;
-    read_file_stm_32 p2; // 2. зависит от p4
-    log_file_serial p3;
 
-    start_point_read_write()
-        : p4() // if default ctor exists
-          ,
-          p2(p4) // read_file_stm_32(only_read_serial &)
-          ,
-          p3(p2) // log_file_serial(read_file_stm_32 &)
-    {
-    }
+public:
+log_file_serial logger;
+read_file_stm_32 parser;
+only_read_serial reader;
+open_usb_port_serial open_port;
+// todo get asscess to reference p4
+ start_point_read_write()
+   : logger()
+   , parser(logger)
+   , reader(parser, open_port)
+{}
+
+
+   
 
     void start_point();
-void thread_start_worker();
+
 private:
     bool status1;
     bool status2;

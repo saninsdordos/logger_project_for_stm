@@ -14,7 +14,7 @@ INPUT:
   
     check_port = sa.openDevice(port_usb.c_str(), 9600);
    
-   
+   std::cout << &sa << "\n";
 
    
 

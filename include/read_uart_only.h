@@ -5,32 +5,42 @@
   #include "open_serial_port.h"
   #include <string>
   #include <array>
-  #include "read_thread_serial.h"
+
+  
+  
   #pragma once
+class log_file_serial;
+class only_read_serial;
 
   class read_file_stm_32
   {
    public:
 
- only_read_serial &qw;
+
+
+ log_file_serial &i;
 
 
 bool status;
-  std::vector<std::string>xyz_stm_32 = {};
-    
-   std::array<std::string, 100> temp = {};
+ 
   //read_file_stm_32() : s(s) {};
-      bool read_serial_uart();
+      char read_serial_uart(char from_uart_reader_symbol);
      
-          read_file_stm_32(only_read_serial &t) : qw(t) {}
+ read_file_stm_32(log_file_serial &logger)
+    : i(logger) {};
+
           
+
     //read_file_stm_32(sa) : test1(){test::open_usb_port_serial::sa;}
 
- 
      private:
        // char formatted_time[100];
-  
-        //open_usb_port_serial s; 
+  int d = 0;
+  int serial_number = 0;
+  std::string to_vector; 
+  char symbol_to_string; 
+
+  //open_usb_port_serial s; 
     };
  
           enum  status_read : int {
