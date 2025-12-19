@@ -1,61 +1,62 @@
 #include "log_to_file_serial.h"
 #include "read_thread_serial.h"
+#include <stdio.h>
+#include "thread"
 
-std::fstream log_file_serial::file_print;
+// /log_file_serial &rur;
+//
 
 bool log_file_serial::log_to_file_serial()
 {
-    //
-  
 
-    file_print.open("log5.txt", std::ios::app | std::fstream::in | std::fstream::out);
-    if (file_print.is_open())
-    {
-        std::cout << "File open" << "\n";
-    }
+ 
+  while (true)
+  {
 
+      file_print.open(file_name, std::ios::app | std::fstream::in | std::fstream::out);
+    
+
+    std::unique_lock<std::mutex> lock(lock_ready_message);
     auto now = std::chrono::system_clock::now();
 
     std::time_t t_c = std::chrono::system_clock::to_time_t(now);
 
-    std::tm *timeptr = localtime(&t_c);
-    //  s.xyz_stm_32.reserve(20);
-  
-    // if (read_bytes <= 0)
-    //  {
+    timeptr = localtime(&t_c);
 
-   std::unique_lock<std::mutex> lock( lock_ready_message);
+    cv.wait(lock);
 
-   cv.wait(lock, [&] {return data_ready == true;});
+    temp_message = uart_messages.front();
+    uart_messages.pop();
 
- 
-        temp_message = uart_messages.front();
-        uart_messages.pop();
-       
-   file_print << std::put_time(timeptr, "%c");
-    file_print << temp_message << "\n"; 
-    
-   
-    // if (e.read_bytes > 0)
-    // {
+    for (int s = 0; s < temp_message.length(); s++)
 
-    // s.xyz_stm_32.insert(s.xyz_stm_32.end(), std::begin(s.temp), std::end(s.temp));
+    {
 
-    //  temp_array = xyz_stm_32.size();//
+      if (temp_message[s] == '\0')
+      {
+        temp_message.erase(s);
+      }
+    }
 
-    // if (temp_array >= 5)
-    // {
+    file_print << "\n "<< "[" << std::put_time(timeptr, "%c") << "]" << temp_message;
 
+    pass_to_count_to_log++;
+    std::cerr << "ok";
 
-    // strftime(formatted_time, sizeof(formatted_time), "%F %H:%M:%S,", timeptr);
+    data_ready = false;
+    file_print.close();
+   change_file_name(pass_to_count_to_log ,file_name);
+  }
 
-    // for(auto it = s.xyz_stm_32.begin(); it !=  s.xyz_stm_32.end();  ++it) //
-    //  std::string x = "X";
-    // std::string y = "Y";
-    //
-    //
+  // s.xyz_stm_32.insert(s.xyz_stm_32.end(), std::begin(s.temp), std::end(s.temp));
 
-   
+  // strftime(formatted_time, sizeof(formatted_time), "%F %H:%M:%S,", timeptr);
 
-    return true;
+  // for(auto it = s.xyz_stm_32.begin(); it !=  s.xyz_stm_32.end();  ++it) //
+  //  std::string x = "X";
+  // std::string y = "Y";
+  //
+  //
+
+  return true;
 }

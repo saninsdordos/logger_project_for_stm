@@ -3,11 +3,8 @@
 open_usb_port_serial t;
 start_point_read_write u;
 
-int main()
-{ 
-    
-
- 
+int main(int argc, char** usb_port)
+{
 
     int choice_switch = 0;
     using std::cin;
@@ -25,19 +22,17 @@ int main()
         {
         case 1:
         {
-       
-           t.open_usb_port();
+
+            t.open_usb_port();
             break;
         }
         case 2:
         {
-       
-      u.start_point();
-       
+
+            u.start_point();
+
             break;
         }
-        }   
+        }
     } while (1);
-
 }
-

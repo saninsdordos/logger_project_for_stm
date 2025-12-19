@@ -5,15 +5,7 @@ char read_file_stm_32::read_serial_uart(char from_uart_reader_symbol)
 {
 
         // TODO: there only do string from char
-        // START BYTE !0x1  END BYTE !0x2
-        // if(!t.sa.isDeviceOpen()) {
-        //s
-std::cout << "parser";
-        // std::cout << &qw.temp_buffer_100 << "buff" << "\n";
-        // }///qw.test_mutex.unlock();
-        // check this, check threads info
-
-        // std::cout << qw.c_style_temp_string[i] << "addr2" << "\n";
+        // Protocol ! , END 0
 
         switch (d)
         {
@@ -22,7 +14,7 @@ std::cout << "parser";
 
                 if (from_uart_reader_symbol == '!')
                 {
-                        std::cout << "start";
+
                         d = START_CREATE_MESSAGE;
                 }
 
@@ -32,9 +24,9 @@ std::cout << "parser";
         case START_CREATE_MESSAGE:
         {
 
-                if (from_uart_reader_symbol == '7')
+                if (from_uart_reader_symbol == 'q')
                 {
-                       from_uart_reader_symbol = '\0';
+                        from_uart_reader_symbol = '\0';
                         d = END_MESSAGE;
                 }
                 to_vector += from_uart_reader_symbol;
@@ -43,7 +35,7 @@ std::cout << "parser";
 
         case END_MESSAGE:
         {
-                std::cout << to_vector << "message" << "\n";
+                std::cerr << to_vector << "message" << "\n";
                 i.receive_message(to_vector);
 
                 to_vector.clear();

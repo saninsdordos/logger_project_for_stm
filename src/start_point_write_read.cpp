@@ -26,6 +26,7 @@ void start_point_read_write::start_point()
    
  
  std::thread o(&only_read_serial::only_read_serial_read, &reader);
+ std::thread s(&log_file_serial::log_to_file_serial, &logger);
 o.join();
 
 

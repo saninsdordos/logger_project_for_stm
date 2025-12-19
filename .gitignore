@@ -41,6 +41,6 @@
 *.dwo
 *.txt
 algorithm_sleep.cpp 
-study_classes.cpp
+classes_study.cpp
 test.cpp 
 dynamic_memory.cpp

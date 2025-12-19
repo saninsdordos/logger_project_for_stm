@@ -6,19 +6,17 @@
 #include <istream>
 #pragma once
 
-    class open_usb_port_serial
-    {
+class open_usb_port_serial
+{
 
-    public:
-    static serialib  sa;
-    
+public:
+    static serialib sa;
+
     bool open_usb_port();
-     
 
+    std::string port_usb;
 
-     std::string port_usb;
- 
-    private:
- int check_port;
- int code_error;
-}; 
+private:
+    int check_port;
+    int code_error;
+};
