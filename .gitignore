@@ -37,6 +37,15 @@
 *.out
 *.app
 *.elf
+*
+!/**/
+
+*.o
+# Unignore all `.jar` in `bin` dir
+!*/
+!*/
+!*.*
+./build/
 # debug information files
 *.dwo
 *.txt
