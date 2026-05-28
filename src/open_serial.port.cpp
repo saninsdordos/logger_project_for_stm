@@ -1,34 +1,16 @@
+#include "main_app.h"
 #include "open_serial_port.h"
+#include <cstdio>
+#include <string>
 serialib open_usb_port_serial::sa;
-bool open_usb_port_serial::open_usb_port()
-{
+main_app exit_2;
+bool open_usb_port_serial::open_usb_port(std::string &port) {
+  sa.openDevice(port.c_str(), 115200);
 
-  using std::cin;
-  using std::cout;
-INPUT:
-  cin.clear();
-
-  std::cout << "Your port:";
-
-  getline(std::cin >> std::ws, port_usb);
-
-  check_port = sa.openDevice(port_usb.c_str(), 9600);
-
-  if (!sa.isDeviceOpen() || cin.fail())
-  {
-
-    perror("Error");
+  if (!sa.isDeviceOpen()) {
     sa.closeDevice();
-    std::cerr << "Write again" << "\n";
-
-    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    port_usb.clear();
-
-    check_port = 0;
-    cin.clear();
-    goto INPUT;
-
-    // bad-style, rework later
+    exit_2.exit_from_programm("error", 0);
+    return false;
   }
   return true;
 }

@@ -41,11 +41,13 @@
 !/**/
 
 *.o
-# Unignore all `.jar` in `bin` dir
+#Directory, and all files
 !*/
 !*/
 !*.*
 ./build/
+./.vscode/
+
 # debug information files
 *.dwo
 *.txt

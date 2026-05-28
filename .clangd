@@ -1,0 +1,7 @@
+ CompileFlags:
+  Add:
+    - -I.
+    - -Isrc
+    - -Iinclude
+    - c++
+   - [-Wall, -I<path-of-bits/stdc++.h>, -ferror-limit=0] 

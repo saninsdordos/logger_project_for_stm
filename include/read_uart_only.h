@@ -1,28 +1,19 @@
-#include <fstream>
-#include <vector>
-#include <string.h>
-#include <iomanip>
-#include "open_serial_port.h"
-#include <string>
+#include "log_to_file_serial.h"
 #include <array>
-
+#include <atomic>
+#include <fstream>
+#include <iomanip>
+#include <string.h>
+#include <string>
+#include <vector>
 #pragma once
-class log_file_serial;
-class only_read_serial;
-
-class read_file_stm_32
-{
+class read_file_stm_32 {
 public:
-  log_file_serial &i;
-
+  log_file_serial *i;
   bool status;
-
-  // read_file_stm_32() : s(s) {};
-  char read_serial_uart(char from_uart_reader_symbol);
-
-  read_file_stm_32(log_file_serial &logger)
-      : i(logger) {};
-
+  log_file_serial *u;
+  char read_serial_uart(char &from_uart_reader_symbol, bool shutdown_work);
+  read_file_stm_32(log_file_serial *logger) : i(logger) {};
   // read_file_stm_32(sa) : test1(){test::open_usb_port_serial::sa;}
 
 private:
@@ -35,8 +26,7 @@ private:
   // open_usb_port_serial s;
 };
 
-enum status_read : int
-{
+enum status_read : int {
   READ_HEADER = 0,
   START_CREATE_MESSAGE = 1,
   END_MESSAGE = 2,

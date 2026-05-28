@@ -1,0 +1,227 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-fsanitize=address",
+      "-I",
+      "../include/",
+      "-o",
+      "reader",
+      "../src/add_to_logger_message_from_parser.cpp"
+    ],
+    "directory": "/home/sanins/Documents/logger_project_for_stm/build",
+    "file": "/home/sanins/Documents/logger_project_for_stm/src/add_to_logger_message_from_parser.cpp",
+    "output": "/home/sanins/Documents/logger_project_for_stm/build/reader"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-fsanitize=address",
+      "-I",
+      "../include/",
+      "-o",
+      "reader",
+      "../src/count_words_to_log.cpp"
+    ],
+    "directory": "/home/sanins/Documents/logger_project_for_stm/build",
+    "file": "/home/sanins/Documents/logger_project_for_stm/src/count_words_to_log.cpp",
+    "output": "/home/sanins/Documents/logger_project_for_stm/build/reader"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-fsanitize=address",
+      "-I",
+      "../include/",
+      "-o",
+      "reader",
+      "../src/get_time.cpp"
+    ],
+    "directory": "/home/sanins/Documents/logger_project_for_stm/build",
+    "file": "/home/sanins/Documents/logger_project_for_stm/src/get_time.cpp",
+    "output": "/home/sanins/Documents/logger_project_for_stm/build/reader"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-fsanitize=address",
+      "-I",
+      "../include/",
+      "-o",
+      "reader",
+      "../src/give_2.cpp"
+    ],
+    "directory": "/home/sanins/Documents/logger_project_for_stm/build",
+    "file": "/home/sanins/Documents/logger_project_for_stm/src/give_2.cpp",
+    "output": "/home/sanins/Documents/logger_project_for_stm/build/reader"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-fsanitize=address",
+      "-I",
+      "../include/",
+      "-o",
+      "reader",
+      "../src/log_to_csv_table.cpp"
+    ],
+    "directory": "/home/sanins/Documents/logger_project_for_stm/build",
+    "file": "/home/sanins/Documents/logger_project_for_stm/src/log_to_csv_table.cpp",
+    "output": "/home/sanins/Documents/logger_project_for_stm/build/reader"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-fsanitize=address",
+      "-I",
+      "../include/",
+      "-o",
+      "reader",
+      "../src/log_to_file_serial.cpp"
+    ],
+    "directory": "/home/sanins/Documents/logger_project_for_stm/build",
+    "file": "/home/sanins/Documents/logger_project_for_stm/src/log_to_file_serial.cpp",
+    "output": "/home/sanins/Documents/logger_project_for_stm/build/reader"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-fsanitize=address",
+      "-I",
+      "../include/",
+      "-o",
+      "reader",
+      "../src/menu.cpp"
+    ],
+    "directory": "/home/sanins/Documents/logger_project_for_stm/build",
+    "file": "/home/sanins/Documents/logger_project_for_stm/src/menu.cpp",
+    "output": "/home/sanins/Documents/logger_project_for_stm/build/reader"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-fsanitize=address",
+      "-I",
+      "../include/",
+      "-o",
+      "reader",
+      "../src/open_serial.port.cpp"
+    ],
+    "directory": "/home/sanins/Documents/logger_project_for_stm/build",
+    "file": "/home/sanins/Documents/logger_project_for_stm/src/open_serial.port.cpp",
+    "output": "/home/sanins/Documents/logger_project_for_stm/build/reader"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-fsanitize=address",
+      "-I",
+      "../include/",
+      "-o",
+      "reader",
+      "../src/read_serial_uart.cpp"
+    ],
+    "directory": "/home/sanins/Documents/logger_project_for_stm/build",
+    "file": "/home/sanins/Documents/logger_project_for_stm/src/read_serial_uart.cpp",
+    "output": "/home/sanins/Documents/logger_project_for_stm/build/reader"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-fsanitize=address",
+      "-I",
+      "../include/",
+      "-o",
+      "reader",
+      "../src/read_thread_uart_only.cpp"
+    ],
+    "directory": "/home/sanins/Documents/logger_project_for_stm/build",
+    "file": "/home/sanins/Documents/logger_project_for_stm/src/read_thread_uart_only.cpp",
+    "output": "/home/sanins/Documents/logger_project_for_stm/build/reader"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-fsanitize=address",
+      "-I",
+      "../include/",
+      "-o",
+      "reader",
+      "../src/serialib.cpp"
+    ],
+    "directory": "/home/sanins/Documents/logger_project_for_stm/build",
+    "file": "/home/sanins/Documents/logger_project_for_stm/src/serialib.cpp",
+    "output": "/home/sanins/Documents/logger_project_for_stm/build/reader"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-fsanitize=address",
+      "-I",
+      "../include/",
+      "-o",
+      "reader",
+      "../src/start_point_table_format.cpp"
+    ],
+    "directory": "/home/sanins/Documents/logger_project_for_stm/build",
+    "file": "/home/sanins/Documents/logger_project_for_stm/src/start_point_table_format.cpp",
+    "output": "/home/sanins/Documents/logger_project_for_stm/build/reader"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-fsanitize=address",
+      "-I",
+      "../include/",
+      "-o",
+      "reader",
+      "../src/start_point_write_read.cpp"
+    ],
+    "directory": "/home/sanins/Documents/logger_project_for_stm/build",
+    "file": "/home/sanins/Documents/logger_project_for_stm/src/start_point_write_read.cpp",
+    "output": "/home/sanins/Documents/logger_project_for_stm/build/reader"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-fsanitize=address",
+      "-I",
+      "../include/",
+      "-o",
+      "reader",
+      "../src/usb_port_from_arguments.cpp"
+    ],
+    "directory": "/home/sanins/Documents/logger_project_for_stm/build",
+    "file": "/home/sanins/Documents/logger_project_for_stm/src/usb_port_from_arguments.cpp",
+    "output": "/home/sanins/Documents/logger_project_for_stm/build/reader"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-fsanitize=address",
+      "-I",
+      "../include/",
+      "-o",
+      "reader",
+      "../src/сheck_tty_port_linux.cpp"
+    ],
+    "directory": "/home/sanins/Documents/logger_project_for_stm/build",
+    "file": "/home/sanins/Documents/logger_project_for_stm/src/сheck_tty_port_linux.cpp",
+    "output": "/home/sanins/Documents/logger_project_for_stm/build/reader"
+  }
+]

@@ -1,37 +1,24 @@
-#include "serialib.h"
-#include"open_serial_port.h"
-
-#include <mutex>
-#include <thread>
+#include "open_serial_port.h"
+#include "read_uart_only.h"
+#include <atomic>
 #include <condition_variable>
-
+#include <ostream>
 #pragma once
-class read_file_stm_32;
-
-
-class only_read_serial {
+class reader_char_serial {
 public:
-read_file_stm_32 &t;
-open_usb_port_serial &u;
-  only_read_serial(read_file_stm_32 &obj, open_usb_port_serial &uu) :t(obj), u(uu)  {};
+  char save_char_from_read[1];
+  bool reader_char_serial_1();
 
-bool only_read_serial_read();
+  read_file_stm_32 &state_machine;
+  reader_char_serial(std::atomic_bool *f, read_file_stm_32 &sm)
+      : receive1(f), state_machine(sm) {
+    std::cout << "add ress reader" << f << std::endl;
+  }
 
+  std::atomic_bool *receive1;
 
-
-
-int read_bytes; 
- 
-
- char c_style_temp_string[20];
-  
-//char temp_buffer_100[100];
-//std::mutex &temp_buffer_100[100];
 private:
-char save_from_serial_char[0];
-bool status5 = true; 
-char tempd;
-int d = 0;
-
-    
+  int read_bytes;
+  open_usb_port_serial u;
+  bool work;
 };
