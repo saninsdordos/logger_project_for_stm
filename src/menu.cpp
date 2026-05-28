@@ -12,7 +12,6 @@ int main(int argc, char **usb_port) {
 
   parser.parsing_arguments_to_usb_port(argc, usb_port);
   int choice_switch = 0;
-  // добавить возможность выбирать директорию/название лога через аргументы
   do {
     cout << "Menu:" << "\n"
          << "2) Start logger txt format" << "\n"
